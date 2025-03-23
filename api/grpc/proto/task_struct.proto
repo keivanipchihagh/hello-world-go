@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package task.v1;
+
+option go_package = "api/grpc/proto/golang";
+
+message Task {
+  string id     = 1;
+  string title  = 2;
+  string author = 3;
+}
