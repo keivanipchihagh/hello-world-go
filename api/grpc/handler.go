@@ -30,6 +30,7 @@ func (s *Server) GetTask(ctx context.Context, req *pb.GetTaskRequest) (*pb.GetTa
 
 func (s *Server) CreateTask(ctx context.Context, req *pb.CreateTaskRequest) (*pb.CreateTaskResponse, error) {
 	log.Println("CreateTask called")
+	// Return the created task.
 	return &pb.CreateTaskResponse{Task: req.Task}, nil
 }
 

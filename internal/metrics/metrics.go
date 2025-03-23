@@ -1,6 +1,7 @@
 package metrics
 
 import (
+	"strconv"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -28,6 +29,6 @@ func PrometheusMetrics() gin.HandlerFunc {
 
 		duration := time.Since(start).Seconds()
 		status := c.Writer.Status()
-		httpDuration.WithLabelValues(c.FullPath(), c.Request.Method, string(status)).Observe(duration)
+		httpDuration.WithLabelValues(c.FullPath(), c.Request.Method, strconv.Itoa(status)).Observe(duration)
 	}
 }
